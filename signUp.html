@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="signUp.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>注册</h1>
+        </div>
+        <div class="main">
+            <form>
+                <span>
+                <input type="text" placeholder="账号" id="账号" onkeydown="return(event.keyCode !==32);" title="不能输入空格">
+                </span><br>
+                
+                <span>
+                <input type="password" placeholder="密码" id="密码" onkeydown="return(event.keyCode !==32);" title="不能输入空格">
+                </span><br>
+
+                <button onclick="button()" type="button" >注 册</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function button(){
+        if(document.getElementById("账号").value!=""){
+        localStorage.setItem(document.getElementById("账号").value,document.getElementById("密码").value)
+        alert("注册成功，请登录")
+        window.location.href='https://soy0c.github.io/login.html'
+        }else{
+            alert("注册失败 ")
+        }
+       
+    }
+</script>
